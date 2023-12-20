@@ -5,7 +5,7 @@ using namespace std;
 
 struct Matrix {
     int size = 0;
-    double** matrix = nullptr; 
+    double** matrix = NULL;
 };
 
 Matrix ReadMatrixFromFile(const char* fileName)
@@ -14,7 +14,6 @@ Matrix ReadMatrixFromFile(const char* fileName)
     if (!file.is_open())
     {
         cerr << "Unable to open file." << endl;
-        exit(EXIT_FAILURE);
     }
 
     Matrix result;
@@ -132,7 +131,7 @@ Matrix GaussJordan(Matrix& matrix)
 
 int main()
 {
-    Matrix mat = ReadMatrixFromFile("input.txt");
+    Matrix mat = ReadMatrixFromFile("matrix.txt");
 
     std::cout << "Original Matrix:" << std::endl;
     printMatrix(mat);
@@ -142,7 +141,7 @@ int main()
     std::cout << "Inverse Matrix:" << std::endl;
     printMatrix(result);
 
-    
+
 
     return 0;
 }
